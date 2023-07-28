@@ -2,6 +2,7 @@
 const mShoesData = [
     {
         key: 0,
+        id: "wtlzsmw3",
         title: 'Fall Limited Edition Sneakers',
         parag: "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everythng the weather can offer.",
         price: '$125.00',
@@ -20,6 +21,7 @@ const mShoesData = [
     },
     {
         key: 1,
+        id: "rri8r7fp",
         title: "New NK men's shoes killshot",
         parag: "Pioneer joint raw rubber sole low top SB casual spring shoes for men. Unisex shoes, low top, 'non-slip, wear resistant, light weight' design, superfine fiber, lace up model, threads are sewn.",
         price: '$399.00',
@@ -34,6 +36,7 @@ const mShoesData = [
     },
     {
         key: 2,
+        id: "cofhzrpl",
         title: "MELOMELO Fashion shoes for men",
         parag: "Step into style and comfort with MELO-MELO Fashion Men Shoes. Made from premium rubber, featuring expertly sewn threads, rubber soles, and a perfect fit, these shoes are your go-to for casual events. Elevate your look with confidence and flair!",
         price: '$369.00',
@@ -49,6 +52,7 @@ const mShoesData = [
     },
     {
         key: 3,
+        id: "ywcr8c9h",
         title: "Canvas Sport Shoes for Men",
         parag: "Unleash your style and conquer any terrain with our Canvas Sport Shoes for men. Breathable, anti-slip, and wear-resistant, these shoes redefine casual athletic footwear. Step up to bold confidence with every stride.",
         price: '$469.00',
@@ -61,21 +65,6 @@ const mShoesData = [
             main4: '/assets/shopee-shoe-4.jpg',
             main5: '/assets/shopee-shoe-5.jpg',
         },
-    },
-]
-
-export const linkedList = [
-    {
-        key: 0,
-    },
-    {
-        key: 1,
-    },
-    {
-        key: 2,
-    },
-    {
-        key: 3,
     },
 ]
 

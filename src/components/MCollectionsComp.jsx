@@ -1,5 +1,6 @@
 import { useStateContext } from "@/contextprovider/ContextProvider";
-import { linkedList } from "@/data/MShoesData";
+import mShoesData from "@/data/MShoesData";
+import Link from "next/link";
 import { useEffect } from "react";
 
 const MCollectionComp = ({ data }) => {
@@ -7,7 +8,7 @@ const MCollectionComp = ({ data }) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setMArrKey((prevKey) => (prevKey + 1) % linkedList.length);
+      setMArrKey((prevKey) => (prevKey + 1) % mShoesData.length);
     }, 12000);
     return () => clearInterval(interval);
   }, []);
@@ -40,7 +41,7 @@ const MCollectionComp = ({ data }) => {
           </div>
           <div className="flex flex-col justify-center items-end gap-[40px]">
             <div className="space-x-[20px]">
-              {linkedList.map((dot) => (
+              {mShoesData.map((dot) => (
                 <>
                   <button
                     key={dot.key}
@@ -52,12 +53,12 @@ const MCollectionComp = ({ data }) => {
                 </>
               ))}
             </div>
-            <a
+            <Link
               href="/Men"
-              className="p-4 text-white font-bold text-xl bg-orange rounded-lg shadow-lg"
+              className="p-4 text-white font-bold text-xl bg-orange rounded-lg shadow-lg transition ease-out hover:bg-pale-orange hover:text-very-dark-blue"
             >
               View Men's Collection
-            </a>
+            </Link>
           </div>
         </div>
       </div>

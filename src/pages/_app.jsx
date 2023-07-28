@@ -1,4 +1,5 @@
 import NavBar from "@/components/NavBar";
+import PopUpGallery from "@/components/PopUpGallery";
 import { ContextProvider } from "@/contextprovider/ContextProvider";
 import "@/styles/globals.css";
 import { Kumbh_Sans } from "next/font/google";
@@ -23,8 +24,11 @@ export default function App({ Component, pageProps }) {
         <title>ECommerce App</title>
       </Head>
       <QueryClientProvider client={queryClient}>
-        <div className={` ${kumbSans.variable} font-kumbSans text-[16px]`}>
+        <div
+          className={`relative w-auto h-auto ${kumbSans.variable} font-kumbSans text-[16px]`}
+        >
           <ContextProvider>
+            <PopUpGallery />
             <NavBar />
             <Component {...pageProps} />
           </ContextProvider>

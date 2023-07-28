@@ -1,10 +1,9 @@
 import { useStateContext } from "@/contextprovider/ContextProvider";
 import { useRouter } from "next/router";
 import navBarData from "@/data/NavBarData";
+import Link from "next/link";
 
 const NavBar = () => {
-  const { isActive, setIsActive } = useStateContext();
-
   const router = useRouter();
 
   return (
@@ -18,7 +17,7 @@ const NavBar = () => {
             <div className="h-full flex justify-between items-center gap-8">
               {navBarData.map((link) => (
                 <>
-                  <a
+                  <Link
                     href={link.link}
                     key={link.key}
                     id={link.id}
@@ -30,7 +29,7 @@ const NavBar = () => {
                     }`}
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </>
               ))}
             </div>

@@ -1,5 +1,6 @@
 import { useStateContext } from "@/contextprovider/ContextProvider";
-import wShoesData, { linkedList } from "@/data/WShoesData";
+import wShoesData from "@/data/WShoesData";
+import Link from "next/link";
 import { useEffect } from "react";
 
 const WCollectionsComp = ({ data }) => {
@@ -7,7 +8,7 @@ const WCollectionsComp = ({ data }) => {
   
   useEffect(() => {
     const interval = setInterval(() => {
-      setWArrKey((prevKey) => (prevKey + 1) % linkedList.length);
+      setWArrKey((prevKey) => (prevKey + 1) % wShoesData.length);
     }, 12000);
     return () => clearInterval(interval);
   }, []);
@@ -40,7 +41,7 @@ const WCollectionsComp = ({ data }) => {
           </div>
           <div className="flex flex-col justify-center items-start gap-[40px]">
             <div className="space-x-[20px]">
-              {linkedList.map((dot) => (
+              {wShoesData.map((dot) => (
                 <button
                   key={dot.key}
                   className={`w-[15px] h-[15px] rounded-full ${
@@ -50,12 +51,12 @@ const WCollectionsComp = ({ data }) => {
                 ></button>
               ))}
             </div>
-            <a
+            <Link
               href="/Women"
-              className="p-4 text-white font-bold text-xl bg-orange rounded-lg shadow-lg"
+              className="p-4 text-white font-bold text-xl bg-orange rounded-lg shadow-lg transition ease-out hover:bg-pale-orange hover:text-very-dark-blue"
             >
               View Women's Collection
-            </a>
+            </Link>
           </div>
         </div>
       </div>

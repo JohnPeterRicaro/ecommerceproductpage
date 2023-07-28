@@ -1,6 +1,7 @@
 const wShoesData = [
     {
       key: 0,
+      id: "ju89gnj4",
       title: "White sneakers for Women",
       parag:
         "Timeless elegance, unbeatable comfort. Elevate your style with our White Sneakers for Women. Perfect for any occasion, a touch of sophistication for your wardrobe.",
@@ -17,6 +18,7 @@ const wShoesData = [
     },
     {
       key: 1,
+      id: "er5jf7t0",
       title: "Blue-Pink White sneakers for Women",
       parag:
         "Step into vibrant style and comfort with our Blue-Pink White Sneakers. Breathable, bold, and bound to impress. Perfect for your active lifestyle.",
@@ -33,6 +35,7 @@ const wShoesData = [
     },
     {
       key: 2,
+      id: "0z2snsdm",
       title: "Explosive Ultralight Casual shoes for Women",
       parag:
         "Fashion-forward comfort: Ready Stock Ladies Ultralight Casual Shoes. Low-top lace-up sneakers for versatile style, all-day comfort. Step up your game!",
@@ -48,17 +51,5 @@ const wShoesData = [
       },
     },
 ];
-
-export const linkedList = [
-  {
-      key: 0,
-  },
-  {
-      key: 1,
-  },
-  {
-      key: 2,
-  },
-]
 
 export default wShoesData
