@@ -20,7 +20,7 @@ const MCollectionComp = ({ data }) => {
         className="w-full flex justify-center items-center gap-[100px]"
       >
         <div className="w-[500px] h-[500px] rounded-xl shadow-md overflow-hidden">
-          <img src={data.pics.main1} alt="" />
+          <img src={data.pics.main.main1} alt="" />
         </div>
         <div className="text-right flex flex-col justify-between items-end gap-[60px]">
           <div className="w-[550px] h-[220px] space-y-[20px]">
