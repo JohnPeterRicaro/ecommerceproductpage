@@ -13,6 +13,7 @@ export const ContextProvider = ({children}) => {
     const [ isArrKey, setIsArrKey ] = useState(0)
     const [ mArrKey, setMArrKey] = useState(0)
     const [ wArrKey, setWArrKey ] = useState(0)
+    const [ isData, setIsData ] = useState([])
     const [ isRoute, setIsRoute ] = useState("/")
     const [ isClicked, setIsClicked ] = useState(initialState)
 
@@ -21,7 +22,7 @@ export const ContextProvider = ({children}) => {
     }
 
     return (
-        <StateContext.Provider value={{sum, setSum, isActive, setIsActive, prodTotal, isArrKey, setIsArrKey, mArrKey, setMArrKey, wArrKey, setWArrKey, setProdTotal, isRoute, setIsRoute, isClicked, setIsClicked}}>
+        <StateContext.Provider value={{sum, setSum, isActive, setIsActive, prodTotal, isArrKey, setIsArrKey, mArrKey, setMArrKey, wArrKey, setWArrKey, isData, setIsData, setProdTotal, isRoute, setIsRoute, isClicked, setIsClicked}}>
             {children}
         </StateContext.Provider>
     )

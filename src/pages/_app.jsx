@@ -23,17 +23,17 @@ export default function App({ Component, pageProps }) {
         <link rel="shortcut icon" href="/assets/favicon.png" />
         <title>ECommerce App</title>
       </Head>
-      <QueryClientProvider client={queryClient}>
-        <div
-          className={`relative w-auto h-auto ${kumbSans.variable} font-kumbSans text-[16px]`}
-        >
-          <ContextProvider>
-            <PopUpGallery />
+      <ContextProvider>
+      <PopUpGallery />
+        <QueryClientProvider client={queryClient}>
+          <div
+            className={`relative ${kumbSans.variable} font-kumbSans text-[16px]`}
+          >
             <NavBar />
             <Component {...pageProps} />
-          </ContextProvider>
-        </div>
-      </QueryClientProvider>
+          </div>
+        </QueryClientProvider>
+      </ContextProvider>
     </>
   );
 }

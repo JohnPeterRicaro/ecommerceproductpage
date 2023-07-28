@@ -1,9 +1,15 @@
 import PopUpButton from "@/components/PopUpButton";
 import { useStateContext } from "@/contextprovider/ContextProvider";
 import mShoesData from "@/data/MShoesData";
+import { useEffect } from "react";
 
 const Men = () => {
-  const {isActive} = useStateContext(false)
+  const { isActive } = useStateContext(false);
+  const { isData, setIsData } = useStateContext();
+
+  useEffect(() => {
+    setIsData(mShoesData);
+  }, []);
 
   return (
     <>
@@ -14,8 +20,13 @@ const Men = () => {
               key={shoe.key}
               className="w-[400px] h-[600px] shadow-lg p-4 rounded-xl flex flex-col justify-start items-center"
             >
-              <PopUpButton data={isActive} className="w-[300px] h-[300px] bg-orange rounded-xl overflow-hidden transition ease-in hover:opacity-[50%] cursor-pointer" image={shoe.pics.main1} altImage={shoe.pics.main2}>
-              </PopUpButton>
+              <PopUpButton
+                currentData={isData}
+                data={isActive}
+                arrData={shoe.key}
+                className="w-[300px] h-[300px] bg-orange rounded-xl overflow-hidden transition ease-in hover:opacity-[50%] cursor-pointer"
+                image={shoe.pics.main.main1}
+              ></PopUpButton>
               <div className="text-center p-5 space-y-7">
                 <div>
                   <h3 className="text-lg text-very-dark-blue font-bold uppercase">
