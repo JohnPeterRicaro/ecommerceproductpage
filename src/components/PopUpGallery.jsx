@@ -12,7 +12,7 @@ const PopUpGallery = ({ data, pictures }) => {
     <>
       {isActive && (
         <>
-          <div className="fixed z-10 h-screen w-screen bg-black bg-opacity-70 flex flex-col justify-center items-center gap-[40px] overflow-hidden">
+          <div className="fixed z-10 h-screen w-screen bg-black bg-opacity-70 flex flex-col justify-center items-center gap-[20px] overflow-hidden">
             <div className="relative w-[550px] flex justify-end items-center">
               <button
                 className="w-[35px] h-[35px] flex justify-center items-center group transition ease-in"
@@ -22,8 +22,8 @@ const PopUpGallery = ({ data, pictures }) => {
                 <div className="absolute w-[35px] h-[5px] rounded-lg bg-white -rotate-45 transition ease-in group-hover:bg-orange"></div>
               </button>
             </div>
-            <div className="w-[550px] h-[550px] flex flex-col justify-start items-center gap-[40px]">
-              <div className="w-full">
+            <div className="flex flex-col justify-start items-center gap-[40px]">
+              <div className="w-[550px] h-[550px] rounded-xl overflow-hidden">
                 <img src={galleryData.pics.main.main1} alt="" />
               </div>
               <div className="flex justify-center items-center gap-[30px]">
