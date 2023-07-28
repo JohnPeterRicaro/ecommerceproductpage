@@ -1,6 +1,12 @@
+import { useStateContext } from "@/contextprovider/ContextProvider";
+import { useRouter } from "next/router";
 import navBarData from "@/data/NavBarData";
 
 const NavBar = () => {
+  const { isActive, setIsActive } = useStateContext();
+
+  const router = useRouter();
+
   return (
     <>
       <div className="w-full h-auto border-b-2 border-gray-200">
@@ -16,8 +22,12 @@ const NavBar = () => {
                     href={link.link}
                     key={link.key}
                     id={link.id}
-                    className="h-full text-gray-400 border-b-4 border-opacity-0 border-b-orange
-                    flex justify-center items-center hover:text-gray-950 hover:border-opacity-100 transition ease-in"
+                    className={`h-full border-b-4 border-b-orange
+                    flex justify-center items-center hover:text-gray-950 hover:border-opacity-100 transition ease-in ${
+                      router.pathname === link.link
+                        ? "border-opacity-100 text-gray-950"
+                        : "border-opacity-0 text-gray-400"
+                    }`}
                   >
                     {link.name}
                   </a>
@@ -30,7 +40,7 @@ const NavBar = () => {
               <img src="/assets/icon-cart.svg" alt="" />
             </button>
             <div className="w-[50px] h-[50px]">
-                <img src="/assets/image-avatar.png" alt="" />
+              <img src="/assets/image-avatar.png" alt="" />
             </div>
           </div>
         </div>

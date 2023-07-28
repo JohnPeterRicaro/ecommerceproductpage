@@ -5,7 +5,7 @@ const navBarData = [
         key: 0,
         id: 0,
         name: "Collections",
-        link: "/Collections"
+        link: "/"
     },
     {
         key: 1,

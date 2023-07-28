@@ -1,9 +1,11 @@
 
 
-const ProductShowcase = ({}) => {
+const ProductShowcase = ({key}) => {
     return(
         <>
-            
+            <div className="">
+                
+            </div>
         </>
     )
 }
