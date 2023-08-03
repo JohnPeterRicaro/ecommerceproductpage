@@ -27,20 +27,22 @@ const CollectionsGallery = ({ shoesData }) => {
 
   const handleLeftClick = () => {
     setIsIndex(
-      (prevdata) => {return prevdata >= shoesData.length ? 0 : prevdata + 1}
+      (index) => {return index <= 0 ? shoesData.length - 1 : index - 1}
     );
   };
 
   const handleRightClick = () => {
-    setIsIndex((nextdata) => {return nextdata <= 0 ? shoesData.length - 1 : nextdata - 1});
+    setIsIndex((index) => {return index >= 6 ? 0 : index + 1});
   };
 
   useEffect(() => {
     const interVal = setInterval(() => {
-      setIsIndex((nextdata) => {return nextdata >= shoesData.length ? 0 : nextdata + 1});
-    }, 10000);
+      setIsIndex((nextdata) => {return nextdata >= 6 ? 0 : nextdata + 1});
+    }, 1000);
     return () => clearInterval(interVal);
   }, []);
+
+  console.log(isIndex)
 
   if (!shoesData || shoesData.length === 0) return null;
 
