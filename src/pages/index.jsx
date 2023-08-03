@@ -3,20 +3,17 @@ import mShoesData from "@/data/MShoesData";
 import wShoesData from "@/data/WShoesData";
 import { AiOutlinePercentage } from "react-icons/ai"
 import { FaGift } from "react-icons/fa"
-import { useEffect, useState } from "react";
+import { useMemo } from "react";
 
 export default function Home() {
-  const [isShoesData, setIsShoesData] = useState([]);
   
-  useEffect(() => {
-    const allShoesData = setIsShoesData(mShoesData.concat(wShoesData)); 
-    return allShoesData
-    
-  }, []);
+  const allShoesData = useMemo(() => {
+    return [...mShoesData, ...wShoesData]
+  }, [])
 
   return (
     <>
-      <CollectionsGallery shoesData={isShoesData}/>
+      <CollectionsGallery shoesData={allShoesData}/>
       <section className="mt-[40px] w-full h-auto">
         <div className="mx-auto w-[1440px] p-[24px] flex justify-center items-center gap-[40px]">
               <div className="flex justify-start items-center gap-[20px]">
