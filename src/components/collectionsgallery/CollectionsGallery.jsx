@@ -50,7 +50,7 @@ const CollectionsGallery = ({ shoesData }) => {
         <div className="relative w-full aspect-video overflow-hidden">
           <AnimatePresence initial={false}>
             <motion.img
-              key={shoesData[isIndex]?.pics?.main?.main1}
+              key={isIndex}
               variants={variants}
               initial="initial"
               exit="exit"
@@ -105,7 +105,7 @@ const CollectionsGallery = ({ shoesData }) => {
                 <>
                   <button
                     onClick={() => setIsIndex(index)}
-                    id={data?.id}
+                    key={data?.id}
                     className={
                       isIndex === index
                         ? "w-[14px] h-[14px] rounded-full bg-white transition ease-in"
