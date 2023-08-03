@@ -32,13 +32,13 @@ const CollectionsGallery = ({ shoesData }) => {
   };
 
   const handleRightClick = () => {
-    setIsIndex((index) => {return index >= 6 ? 0 : index + 1});
+    setIsIndex((index) => {return index >= shoesData.length - 1 ? 0 : index + 1});
   };
 
   useEffect(() => {
     const interVal = setInterval(() => {
-      setIsIndex((nextdata) => {return nextdata >= 6 ? 0 : nextdata + 1});
-    }, 1000);
+      setIsIndex((nextdata) => {return nextdata >= shoesData.length - 1 ? 0 : nextdata + 1});
+    }, 12000);
     return () => clearInterval(interVal);
   }, []);
 
