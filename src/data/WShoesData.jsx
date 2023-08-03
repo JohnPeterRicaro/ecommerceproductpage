@@ -1,6 +1,6 @@
 const wShoesData = [
   {
-    key: 0,
+    key: 4,
     id: "ju89gnj4",
     title: "White sneakers for Women",
     parag:
@@ -19,7 +19,7 @@ const wShoesData = [
     },
   },
   {
-    key: 1,
+    key: 5,
     id: "er5jf7t0",
     title: "Blue-Pink White sneakers for Women",
     parag:
@@ -38,7 +38,7 @@ const wShoesData = [
     },
   },
   {
-    key: 2,
+    key: 6,
     id: "0z2snsdm",
     title: "Explosive Ultralight Casual shoes for Women",
     parag:
