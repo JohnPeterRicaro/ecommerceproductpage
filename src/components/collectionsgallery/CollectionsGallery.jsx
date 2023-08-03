@@ -101,8 +101,8 @@ const CollectionsGallery = ({ shoesData }) => {
               </motion.p>
             </div>
             <div className="flex justify-center items-center gap-5">
-              {shoesData.map((data, index) => (
-                <>
+              {shoesData.map((data, index) => {
+                return (
                   <button
                     onClick={() => setIsIndex(index)}
                     key={index}
@@ -112,8 +112,8 @@ const CollectionsGallery = ({ shoesData }) => {
                         : "w-[14px] h-[14px] rounded-full bg-white bg-opacity-50 transition ease-in"
                     }
                   ></button>
-                </>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>
