@@ -22,6 +22,12 @@ const mShoesData = [
         thumb4: "/assets/image-product-4-thumbnail.jpg",
       },
     },
+    bg: {
+      main1 : "bg-img-1",
+      main2 : "bg-img-2",
+      main3 : "bg-img-3",
+      main4 : "bg-img-4",
+    },
   },
   {
     key: 1,
@@ -39,6 +45,12 @@ const mShoesData = [
         main3: "/assets/shopee-casual-3.jpg",
         main4: "/assets/shopee-casual-4.jpg",
       },
+    },
+    bg: {
+      main1 : "bg-img-1",
+      main2 : "bg-img-2",
+      main3 : "bg-img-3",
+      main4 : "bg-img-4",
     },
   },
   {
@@ -59,6 +71,12 @@ const mShoesData = [
         main5: "/assets/shopee-nike-5.jpg",
       },
     },
+    bg: {
+      main1 : "bg-shopee-nike-1",
+      main2 : "bg-shopee-nike-2",
+      main3 : "bg-shopee-nike-3",
+      main4 : "bg-shopee-nike-4",
+    },
   },
   {
     key: 3,
@@ -77,6 +95,13 @@ const mShoesData = [
         main4: "/assets/shopee-shoe-4.jpg",
         main5: "/assets/shopee-shoe-5.jpg",
       },
+    },
+    bg: {
+      main1 : "bg-shopee-shoe-1",
+      main2 : "bg-shopee-shoe-2",
+      main3 : "bg-shopee-shoe-3",
+      main4 : "bg-shopee-shoe-4",
+      main4 : "bg-shopee-shoe-5",
     },
   },
 ];

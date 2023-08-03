@@ -27,9 +27,6 @@ export const ContextProvider = ({ children }) => {
   const [sum, setSum] = useState();
   const [prodTotal, setProdTotal] = useState();
   const [isActive, setIsActive] = useState();
-  const [isArrKey, setIsArrKey] = useState(0);
-  const [mArrKey, setMArrKey] = useState(0);
-  const [wArrKey, setWArrKey] = useState(0);
   const [isData, setIsData] = useState([]);
   const [isRoute, setIsRoute] = useState("/");
   const [isClicked, setIsClicked] = useState(initialState);
@@ -47,12 +44,6 @@ export const ContextProvider = ({ children }) => {
         isActive,
         setIsActive,
         prodTotal,
-        isArrKey,
-        setIsArrKey,
-        mArrKey,
-        setMArrKey,
-        wArrKey,
-        setWArrKey,
         isData,
         setIsData,
         setProdTotal,

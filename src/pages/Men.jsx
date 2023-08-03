@@ -1,14 +1,10 @@
-import PopUpButton from "@/components/PopUpButton";
-import { useStateContext } from "@/contextprovider/ContextProvider";
+import CollectionsComponent from "@/components/collectioncomponent/CollectionsComponent";
 import mShoesData from "@/data/MShoesData";
-import { useEffect } from "react";
 
 const Men = () => {
 
   return (
-    <>
-    
-    </>
+    <CollectionsComponent data={mShoesData}/>
   );
 };
 

@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 import { ContextProvider } from "@/contextprovider/ContextProvider";
 import "@/styles/globals.css";
@@ -29,6 +30,7 @@ export default function App({ Component, pageProps }) {
           >
             <NavBar />
             <Component {...pageProps} />
+            <Footer/>
           </div>
         </QueryClientProvider>
       </ContextProvider>

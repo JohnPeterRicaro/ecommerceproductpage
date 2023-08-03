@@ -17,7 +17,6 @@ const NavBar = () => {
             <div className="h-full flex justify-between items-center gap-8">
               {navBarData.map((link, index) => {
                 return (
-                  <>
                     <Link
                       href={link.link}
                       key={index}
@@ -31,7 +30,6 @@ const NavBar = () => {
                     >
                       {link.name}
                     </Link>
-                  </>
                 );
               })}
             </div>

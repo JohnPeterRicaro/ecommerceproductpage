@@ -40,9 +40,7 @@ const CollectionsGallery = ({ shoesData }) => {
       setIsIndex((nextdata) => {return nextdata >= shoesData.length - 1 ? 0 : nextdata + 1});
     }, 12000);
     return () => clearInterval(interVal);
-  }, []);
-
-  console.log(isIndex)
+  }, [isIndex]);
 
   if (!shoesData || shoesData.length === 0) return null;
 
@@ -52,15 +50,15 @@ const CollectionsGallery = ({ shoesData }) => {
         <div className="relative w-full aspect-video overflow-hidden">
           <AnimatePresence initial={false}>
             <motion.img
-              key={shoesData[isIndex]}
-              variants={variants}
-              initial="initial"
-              exit="exit"
-              animate="animate"
-              custom={direction}
-              className="absolute w-full h-full"
-              src={shoesData[isIndex]?.pics.main.main1}
-              alt={shoesData[isIndex]?.pics.main.main2}
+                key={shoesData[isIndex]?.id}
+                variants={variants}
+                initial="initial"
+                exit="exit"
+                animate="animate"
+                custom={direction}
+              className="absolute object-cover w-full h-full"
+              src={shoesData[isIndex].pics.main.main1}
+              alt={shoesData[isIndex].pics.main.main2}
             />
           </AnimatePresence>
           {/* Left Button */}

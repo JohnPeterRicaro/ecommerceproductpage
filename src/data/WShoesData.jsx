@@ -17,6 +17,13 @@ const wShoesData = [
         main5: "/assets/shopee-women-rubber-5.jpg",
       },
     },
+    bg: {
+      main1 : "bg-shopee-wShoe-1",
+      main2 : "bg-shopee-wShoe-2",
+      main3 : "bg-shopee-wShoe-3",
+      main4 : "bg-shopee-wShoe-4",
+      main5 : "bg-shopee-wShoe-5",
+    },
   },
   {
     key: 5,
@@ -36,6 +43,13 @@ const wShoesData = [
         main5: "/assets/shopee-women-shoes-5.jpg",
       },
     },
+    bg: {
+      main1 : "bg-shopee-womenS-1",
+      main2 : "bg-shopee-womenS-2",
+      main3 : "bg-shopee-womenS-3",
+      main4 : "bg-shopee-womenS-4",
+      main5 : "bg-shopee-womenS-5",
+    },
   },
   {
     key: 6,
@@ -54,6 +68,13 @@ const wShoesData = [
         main4: "/assets/shopee-women-sneakers-4.jpg",
         main5: "/assets/shopee-women-sneakers-5.jpg",
       },
+    },
+    bg: {
+      main1 : "bg-shopee-wSneakers-1",
+      main2 : "bg-shopee-wSneakers-2",
+      main3 : "bg-shopee-wSneakers-3",
+      main4 : "bg-shopee-wSneakers-4",
+      main5 : "bg-shopee-wSneakers-5",
     },
   },
 ];
