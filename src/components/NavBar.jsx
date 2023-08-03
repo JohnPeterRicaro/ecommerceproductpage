@@ -11,9 +11,9 @@ const NavBar = () => {
       <div className="w-full h-auto border-b-2 border-gray-200">
         <div className="mx-auto w-[1440px] h-[120px] flex justify-between items-center">
           <div className="h-full flex justify-center items-center gap-10">
-            <a href="/" className="h-full flex justify-center items-center">
+            <Link href="/" className="h-full flex justify-center items-center">
               <img src="/assets/logo.svg" alt="" />
-            </a>
+            </Link>
             <div className="h-full flex justify-between items-center gap-8">
               {navBarData.map((link) => (
                 <>
