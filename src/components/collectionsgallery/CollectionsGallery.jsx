@@ -50,7 +50,7 @@ const CollectionsGallery = ({ shoesData }) => {
         <div className="relative w-full aspect-video overflow-hidden">
           <AnimatePresence initial={false}>
             <motion.img
-              key={isIndex}
+              key={shoesData[isIndex]}
               variants={variants}
               initial="initial"
               exit="exit"
