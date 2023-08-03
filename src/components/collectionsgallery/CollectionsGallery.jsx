@@ -27,17 +27,17 @@ const CollectionsGallery = ({ shoesData }) => {
 
   const handleLeftClick = () => {
     setIsIndex(
-      (prevdata) => (prevdata - 1 + shoesData.length) % shoesData.length
+      (prevdata) => {return prevdata >= shoesData.length ? 0 : prevdata + 1}
     );
   };
 
   const handleRightClick = () => {
-    setIsIndex((nextdata) => (nextdata + 1) % shoesData.length);
+    setIsIndex((nextdata) => {return nextdata <= 0 ? shoesData.length - 1 : nextdata - 1});
   };
 
   useEffect(() => {
     const interVal = setInterval(() => {
-      setIsIndex((nextData) => (nextData + 1) % shoesData.length);
+      setIsIndex((nextdata) => {return nextdata >= shoesData.length ? 0 : nextdata + 1});
     }, 10000);
     return () => clearInterval(interVal);
   }, []);
@@ -57,8 +57,8 @@ const CollectionsGallery = ({ shoesData }) => {
               animate="animate"
               custom={direction}
               className="absolute w-full h-full"
-              src={shoesData[isIndex]?.pics?.main?.main1}
-              alt={shoesData[isIndex]?.pics?.main?.main2}
+              src={shoesData[isIndex]?.pics.main.main1}
+              alt={shoesData[isIndex]?.pics.main.main2}
             />
           </AnimatePresence>
           {/* Left Button */}

@@ -15,23 +15,25 @@ const NavBar = () => {
               <img src="/assets/logo.svg" alt="" />
             </Link>
             <div className="h-full flex justify-between items-center gap-8">
-              {navBarData.map((link) => (
-                <>
-                  <Link
-                    href={link.link}
-                    key={link.key}
-                    id={link.id}
-                    className={`h-full border-b-4 border-b-orange
+              {navBarData.map((link, index) => {
+                return (
+                  <>
+                    <Link
+                      href={link.link}
+                      key={index}
+                      id={link.id}
+                      className={`h-full border-b-4 border-b-orange
                     flex justify-center items-center hover:text-gray-950 hover:border-opacity-100 transition ease-in ${
                       router.pathname === link.link
                         ? "border-opacity-100 text-gray-950"
                         : "border-opacity-0 text-gray-400"
                     }`}
-                  >
-                    {link.name}
-                  </Link>
-                </>
-              ))}
+                    >
+                      {link.name}
+                    </Link>
+                  </>
+                );
+              })}
             </div>
           </div>
           <div className="flex justify-center items-center gap-[40px]">
