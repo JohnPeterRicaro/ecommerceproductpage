@@ -105,7 +105,7 @@ const CollectionsGallery = ({ shoesData }) => {
                 <>
                   <button
                     onClick={() => setIsIndex(index)}
-                    key={data?.id}
+                    key={index}
                     className={
                       isIndex === index
                         ? "w-[14px] h-[14px] rounded-full bg-white transition ease-in"
