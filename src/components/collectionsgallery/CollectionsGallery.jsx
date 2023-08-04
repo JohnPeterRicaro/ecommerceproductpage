@@ -57,8 +57,8 @@ const CollectionsGallery = ({ shoesData }) => {
                 animate="animate"
                 custom={direction}
               className="absolute object-cover w-full h-full"
-              src={shoesData[isIndex].pics.main.main1}
-              alt={shoesData[isIndex].pics.main.main2}
+              src={shoesData[isIndex].pics[0]}
+              alt={shoesData[isIndex].pics[1]}
             />
           </AnimatePresence>
           {/* Left Button */}

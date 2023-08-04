@@ -1,6 +1,6 @@
 const wShoesData = [
   {
-    key: 4,
+    key: 0,
     id: "ju89gnj4",
     title: "White sneakers for Women",
     parag:
@@ -8,25 +8,23 @@ const wShoesData = [
     price: "$289.00",
     sale: "64%",
     oldPrice: "$799.00",
-    pics: {
-      main: {
-        main1: "/assets/shopee-women-rubber-1.jpg",
-        main2: "/assets/shopee-women-rubber-2.jpg",
-        main3: "/assets/shopee-women-rubber-3.jpg",
-        main4: "/assets/shopee-women-rubber-4.jpg",
-        main5: "/assets/shopee-women-rubber-5.jpg",
-      },
-    },
-    bg: {
-      main1 : "bg-shopee-wShoe-1",
-      main2 : "bg-shopee-wShoe-2",
-      main3 : "bg-shopee-wShoe-3",
-      main4 : "bg-shopee-wShoe-4",
-      main5 : "bg-shopee-wShoe-5",
-    },
+    pics: [
+      "/assets/shopee-women-rubber-1.jpg",
+      "/assets/shopee-women-rubber-2.jpg",
+      "/assets/shopee-women-rubber-3.jpg",
+      "/assets/shopee-women-rubber-4.jpg",
+      "/assets/shopee-women-rubber-5.jpg",
+    ],
+    bg: [
+      "bg-shopee-wShoe-1",
+      "bg-shopee-wShoe-2",
+      "bg-shopee-wShoe-3",
+      "bg-shopee-wShoe-4",
+      "bg-shopee-wShoe-5",
+    ],
   },
   {
-    key: 5,
+    key: 1,
     id: "er5jf7t0",
     title: "Blue-Pink White sneakers for Women",
     parag:
@@ -34,25 +32,23 @@ const wShoesData = [
     price: "$289.00",
     sale: "64%",
     oldPrice: "$799.00",
-    pics: {
-      main: {
-        main1: "/assets/shopee-women-shoes-1.jpg",
-        main2: "/assets/shopee-women-shoes-2.jpg",
-        main3: "/assets/shopee-women-shoes-3.jpg",
-        main4: "/assets/shopee-women-shoes-4.jpg",
-        main5: "/assets/shopee-women-shoes-5.jpg",
-      },
-    },
-    bg: {
-      main1 : "bg-shopee-womenS-1",
-      main2 : "bg-shopee-womenS-2",
-      main3 : "bg-shopee-womenS-3",
-      main4 : "bg-shopee-womenS-4",
-      main5 : "bg-shopee-womenS-5",
-    },
+    pics: [
+      "/assets/shopee-women-shoes-1.jpg",
+      "/assets/shopee-women-shoes-2.jpg",
+      "/assets/shopee-women-shoes-3.jpg",
+      "/assets/shopee-women-shoes-4.jpg",
+      "/assets/shopee-women-shoes-5.jpg",
+    ],
+    bg: [
+      "bg-shopee-womenS-1",
+      "bg-shopee-womenS-2",
+      "bg-shopee-womenS-3",
+      "bg-shopee-womenS-4",
+      "bg-shopee-womenS-5",
+    ],
   },
   {
-    key: 6,
+    key: 2,
     id: "0z2snsdm",
     title: "Explosive Ultralight Casual shoes for Women",
     parag:
@@ -60,22 +56,20 @@ const wShoesData = [
     price: "$885.00",
     sale: " - ",
     oldPrice: " - ",
-    pics: {
-      main: {
-        main1: "/assets/shopee-women-sneakers-1.jpg",
-        main2: "/assets/shopee-women-sneakers-2.jpg",
-        main3: "/assets/shopee-women-sneakers-3.jpg",
-        main4: "/assets/shopee-women-sneakers-4.jpg",
-        main5: "/assets/shopee-women-sneakers-5.jpg",
-      },
-    },
-    bg: {
-      main1 : "bg-shopee-wSneakers-1",
-      main2 : "bg-shopee-wSneakers-2",
-      main3 : "bg-shopee-wSneakers-3",
-      main4 : "bg-shopee-wSneakers-4",
-      main5 : "bg-shopee-wSneakers-5",
-    },
+    pics: [
+      "/assets/shopee-women-sneakers-1.jpg",
+      "/assets/shopee-women-sneakers-2.jpg",
+      "/assets/shopee-women-sneakers-3.jpg",
+      "/assets/shopee-women-sneakers-4.jpg",
+      "/assets/shopee-women-sneakers-5.jpg",
+    ],
+    bg: [
+      "bg-shopee-wSneakers-1",
+      "bg-shopee-wSneakers-2",
+      "bg-shopee-wSneakers-3",
+      "bg-shopee-wSneakers-4",
+      "bg-shopee-wSneakers-5",
+    ],
   },
 ];
 

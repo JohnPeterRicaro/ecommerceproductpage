@@ -1,5 +1,7 @@
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
+import IdImageViewer from "@/components/imageview/IdImgViewer";
+import ImageViewer from "@/components/imageview/ImageViewer";
 import { ContextProvider } from "@/contextprovider/ContextProvider";
 import "@/styles/globals.css";
 import { Kumbh_Sans } from "next/font/google";
@@ -28,9 +30,11 @@ export default function App({ Component, pageProps }) {
           <div
             className={`relative ${kumbSans.variable} font-kumbSans text-[16px]`}
           >
+            <IdImageViewer/>
+            <ImageViewer />
             <NavBar />
             <Component {...pageProps} />
-            <Footer/>
+            <Footer />
           </div>
         </QueryClientProvider>
       </ContextProvider>

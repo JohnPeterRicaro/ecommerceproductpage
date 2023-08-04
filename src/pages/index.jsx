@@ -3,19 +3,17 @@ import mShoesData from "@/data/MShoesData";
 import wShoesData from "@/data/WShoesData";
 import { AiOutlinePercentage } from "react-icons/ai";
 import { FaGift } from "react-icons/fa";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import CollectionsCard from "@/components/collectionsgallery/CollectionsCard";
 import Link from "next/link";
+import { useStateContext } from "@/contextprovider/ContextProvider";
 
 export default function Home() {
-
-  const allShoesData = useMemo(() => {
-    return [...mShoesData, ...wShoesData];
-  }, []);
+  const { isData } = useStateContext();
 
   return (
     <>
-      <CollectionsGallery shoesData={allShoesData} />
+      <CollectionsGallery shoesData={isData} />
       <section className="mt-[80px] w-full h-auto">
         <CollectionsCard data={wShoesData}>
           <div className="z-20 p-[24px] w-full h-full flex flex-col justify-center items-end gap-[20px]">

@@ -8,26 +8,13 @@ const mShoesData = [
     price: "$125.00",
     sale: "50%",
     oldPrice: "$250.00",
-    pics: {
-      main: {
-        main1: "/assets/image-product-1.jpg",
-        main2: "/assets/image-product-2.jpg",
-        main3: "/assets/image-product-3.jpg",
-        main4: "/assets/image-product-4.jpg",
-      },
-      thumb: {
-        thumb1: "/assets/image-product-1-thumbnail.jpg",
-        thumb2: "/assets/image-product-2-thumbnail.jpg",
-        thumb3: "/assets/image-product-3-thumbnail.jpg",
-        thumb4: "/assets/image-product-4-thumbnail.jpg",
-      },
-    },
-    bg: {
-      main1 : "bg-img-1",
-      main2 : "bg-img-2",
-      main3 : "bg-img-3",
-      main4 : "bg-img-4",
-    },
+    pics: [
+      "/assets/image-product-1.jpg",
+      "/assets/image-product-2.jpg",
+      "/assets/image-product-3.jpg",
+      "/assets/image-product-4.jpg",
+    ],
+    bg: ["bg-img-1", "bg-img-2", "bg-img-3", "bg-img-4"],
   },
   {
     key: 1,
@@ -38,20 +25,18 @@ const mShoesData = [
     price: "$399.00",
     sale: "10%",
     oldPrice: "$425.00",
-    pics: {
-      main: {
-        main1: "/assets/shopee-casual-1.jpg",
-        main2: "/assets/shopee-casual-2.jpg",
-        main3: "/assets/shopee-casual-3.jpg",
-        main4: "/assets/shopee-casual-4.jpg",
-      },
-    },
-    bg: {
-      main1 : "bg-img-1",
-      main2 : "bg-img-2",
-      main3 : "bg-img-3",
-      main4 : "bg-img-4",
-    },
+    pics: [
+      "/assets/shopee-casual-1.jpg",
+      "/assets/shopee-casual-2.jpg",
+      "/assets/shopee-casual-3.jpg",
+      "/assets/shopee-casual-4.jpg",
+    ],
+    bg: [
+      "bg-shopee-casual-1",
+      "bg-shopee-casual-2",
+      "bg-shopee-casual-3",
+      "bg-shopee-casual-4",
+    ],
   },
   {
     key: 2,
@@ -62,21 +47,19 @@ const mShoesData = [
     price: "$369.00",
     sale: "66%",
     oldPrice: "$1,080.00",
-    pics: {
-      main: {
-        main1: "/assets/shopee-nike-1.jpg",
-        main2: "/assets/shopee-nike-2.jpg",
-        main3: "/assets/shopee-nike-3.jpg",
-        main4: "/assets/shopee-nike-4.jpg",
-        main5: "/assets/shopee-nike-5.jpg",
-      },
-    },
-    bg: {
-      main1 : "bg-shopee-nike-1",
-      main2 : "bg-shopee-nike-2",
-      main3 : "bg-shopee-nike-3",
-      main4 : "bg-shopee-nike-4",
-    },
+    pics: [
+      "/assets/shopee-nike-1.jpg",
+      "/assets/shopee-nike-2.jpg",
+      "/assets/shopee-nike-3.jpg",
+      "/assets/shopee-nike-4.jpg",
+      "/assets/shopee-nike-5.jpg",
+    ],
+    bg: [
+      "bg-shopee-nike-1",
+      "bg-shopee-nike-2",
+      "bg-shopee-nike-3",
+      "bg-shopee-nike-4",
+    ],
   },
   {
     key: 3,
@@ -87,22 +70,20 @@ const mShoesData = [
     price: "$469.00",
     sale: " - ",
     oldPrice: "",
-    pics: {
-      main: {
-        main1: "/assets/shopee-shoe-1.jpg",
-        main2: "/assets/shopee-shoe-2.jpg",
-        main3: "/assets/shopee-shoe-3.jpg",
-        main4: "/assets/shopee-shoe-4.jpg",
-        main5: "/assets/shopee-shoe-5.jpg",
-      },
-    },
-    bg: {
-      main1 : "bg-shopee-shoe-1",
-      main2 : "bg-shopee-shoe-2",
-      main3 : "bg-shopee-shoe-3",
-      main4 : "bg-shopee-shoe-4",
-      main4 : "bg-shopee-shoe-5",
-    },
+    pics: [
+      "/assets/shopee-shoe-1.jpg",
+      "/assets/shopee-shoe-2.jpg",
+      "/assets/shopee-shoe-3.jpg",
+      "/assets/shopee-shoe-4.jpg",
+      "/assets/shopee-shoe-5.jpg",
+    ],
+    bg: [
+      "bg-shopee-shoe-1",
+      "bg-shopee-shoe-2",
+      "bg-shopee-shoe-3",
+      "bg-shopee-shoe-4",
+      "bg-shopee-shoe-5",
+    ],
   },
 ];
 

@@ -1,10 +1,11 @@
 import { FaEye } from "react-icons/fa";
-import Link from "next/link";
+import { ImageButton } from "../imageview/ImageViewer";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 
 const CollectionsComponent = ({ data }) => {
   const router = useRouter();
+  
   return (
     <div className="mx-auto my-[80px] w-[1440px] h-auto">
       <div className="w-full py-[80px] flex flex-wrap justify-center items-center gap-[54px]">
@@ -14,14 +15,14 @@ const CollectionsComponent = ({ data }) => {
               key={card.key}
               className="w-auto rounded-3xl overflow-hidden bg-gray-50 shadow-md flex justify-center items-center gap-5"
             >
-              <div className="relative w-[340px] cursor-pointer group">
+              <ImageButton imageData={data} imageKey={card.key}>
                 <>
                   <div className="absolute z-10 w-full h-full bg-black bg-opacity-0 transition ease group-hover:backdrop-blur group-hover:bg-opacity-5 flex justify-center items-center">
                     <FaEye className="text-5xl fill-white opacity-0 group-hover:opacity-100" />
                   </div>
-                  <img src={card.pics.main.main1} className="" alt="" />
+                  <img src={card.pics[0]} className="" alt="" />
                 </>
-              </div>
+              </ImageButton>
               <div className="w-[300px] px-[24px] flex flex-col justify-center items-start gap-[20px]">
                 <h1 className="text-2xl font-bold">{card.title}</h1>
                 <p className="text-sm">{card.parag}</p>
@@ -30,7 +31,7 @@ const CollectionsComponent = ({ data }) => {
                     whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
                     whileTap={{ scale: 0.9 }}
                     className="bg-orange px-3 py-1 rounded-lg text-white font-bold transition ease hover:bg-pale-orange hover:text-gray-800"
-                    onClick={() => router.push({pathname: `/productshowcase/${card.id}`})}
+                    onClick={() => router.push({pathname: `/productshowcase/[id]`, query: {id: card.id}})}
                   >
                     View Full Details
                   </motion.button>

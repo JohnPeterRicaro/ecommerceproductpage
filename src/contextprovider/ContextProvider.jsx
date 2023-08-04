@@ -1,4 +1,6 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useMemo } from "react";
+import mShoesData from "@/data/MShoesData";
+import wShoesData from "@/data/WShoesData";
 
 const StateContext = createContext();
 
@@ -13,7 +15,7 @@ export const ContextProvider = ({ children }) => {
   const CART_TITLE = "DATA_TITLE";
   const CART_PRICE = "CART_PRICE";
   const CART_PIC = "CART_PIC";
-  const CART_SUM = 0
+  const CART_SUM = 0;
 
   const CART_DATA = {
     key: CART_KEY,
@@ -24,16 +26,22 @@ export const ContextProvider = ({ children }) => {
     sum: CART_SUM,
   };
 
+  const allShoesData = useMemo(() => {
+    return [...mShoesData, ...wShoesData];
+  }, []);
+
   const [sum, setSum] = useState();
   const [prodTotal, setProdTotal] = useState();
-  const [isActive, setIsActive] = useState();
-  const [isData, setIsData] = useState([]);
+  const [isActive, setIsActive] = useState(false);
+  const [isIdActive, setIsIdActive] = useState(false);
+  const [isData, setIsData] = useState(allShoesData);
+  const [isKey, setIsKey] = useState(0);
   const [isRoute, setIsRoute] = useState("/");
   const [isClicked, setIsClicked] = useState(initialState);
   const [isCartData, setIsCartData] = useState([CART_DATA]);
 
   const handleClick = (clicked) => {
-    setIsClicked({ ...initialState, [clicked]: true });
+    setIsClicked({ ...initialState, [clicked]: true, notification: prodTotal });
   };
 
   return (
@@ -43,9 +51,13 @@ export const ContextProvider = ({ children }) => {
         setSum,
         isActive,
         setIsActive,
+        isIdActive,
+        setIsIdActive,
         prodTotal,
         isData,
         setIsData,
+        isKey,
+        setIsKey,
         setProdTotal,
         isRoute,
         setIsRoute,
