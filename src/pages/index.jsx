@@ -3,17 +3,18 @@ import mShoesData from "@/data/MShoesData";
 import wShoesData from "@/data/WShoesData";
 import { AiOutlinePercentage } from "react-icons/ai";
 import { FaGift } from "react-icons/fa";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import CollectionsCard from "@/components/collectionsgallery/CollectionsCard";
 import Link from "next/link";
-import { useStateContext } from "@/contextprovider/ContextProvider";
 
 export default function Home() {
-  const { isData } = useStateContext();
+  const allShoesData = useMemo(() => {
+    return [...mShoesData, ...wShoesData];
+  }, []);
 
   return (
     <>
-      <CollectionsGallery shoesData={isData} />
+      <CollectionsGallery shoesData={allShoesData} />
       <section className="mt-[80px] w-full h-auto">
         <CollectionsCard data={wShoesData}>
           <div className="z-20 p-[24px] w-full h-full flex flex-col justify-center items-end gap-[20px]">
@@ -22,7 +23,7 @@ export default function Home() {
             </h1>
             <Link
               href={`/Women`}
-              className="px-[20px] py-[10px] rounded-xl bg-orange text-white font-bold text-lg flex justify-center items-center uppercase transition ease-in hover:bg-pale-orange hover:text-gray-800"
+              className="px-[20px] py-[10px] rounded-xl bg-orange text-white font-bold text-lg flex justify-center items-center uppercase transition ease-in hover:bg-pale-orange hover:text-orange"
             >
               visit collection
             </Link>
@@ -78,7 +79,7 @@ export default function Home() {
             </h1>
             <Link
               href={`/Men`}
-              className="px-[20px] py-[10px] rounded-xl bg-orange text-white font-bold text-lg flex justify-center items-center uppercase transition ease-in hover:bg-pale-orange hover:text-gray-800"
+              className="px-[20px] py-[10px] rounded-xl bg-orange text-white font-bold text-lg flex justify-center items-center uppercase transition ease-in hover:bg-pale-orange hover:text-orange"
             >
               visit collection
             </Link>

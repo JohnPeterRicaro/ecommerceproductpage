@@ -30,7 +30,7 @@ const CollectionsComponent = ({ data }) => {
                   <motion.button
                     whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
                     whileTap={{ scale: 0.9 }}
-                    className="bg-orange px-3 py-1 rounded-lg text-white font-bold transition ease hover:bg-pale-orange hover:text-gray-800"
+                    className="bg-orange px-3 py-1 rounded-lg text-white font-bold transition ease hover:bg-pale-orange hover:text-orange"
                     onClick={() => router.push({pathname: `/productshowcase/[id]`, query: {id: card.id}})}
                   >
                     View Full Details

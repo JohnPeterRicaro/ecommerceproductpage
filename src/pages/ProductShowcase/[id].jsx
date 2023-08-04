@@ -5,6 +5,8 @@ import mShoesData from "@/data/MShoesData";
 import wShoesData from "@/data/WShoesData";
 import { useStateContext } from "@/contextprovider/ContextProvider";
 import { IdImageButton } from "@/components/imageview/IdImgViewer";
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import ToCartBttn from "@/components/cart/ToCartBttn";
 
 const ProductShowcase = ({ req, res }) => {
   const [key, setKey] = useState(0);
@@ -92,22 +94,40 @@ const ProductShowcase = ({ req, res }) => {
                 {productData?.title}
               </h1>
             </div>
-            <p className="text-left w-[500px] text-lg text-dark-grayish-blue">{productData?.parag}</p>
+            <p className="text-left w-[500px] text-lg text-dark-grayish-blue">
+              {productData?.parag}
+            </p>
             <div className="space-y-[10px]">
               <div className="flex justify-center items-center gap-[20px]">
-                  <h3 className=" text-4xl text-gray-800 font-bold uppercase">
-                    {productData?.price}
-                  </h3>
-                  <p className="text-base text-orange font-bold uppercase bg-pale-orange px-[8px] py-[4px] rounded-lg">
-                    {productData.sale}
-                  </p>
+                <h3 className=" text-4xl text-gray-800 font-bold uppercase">
+                  {productData?.price}
+                </h3>
+                <p className="text-base text-orange font-bold uppercase bg-pale-orange px-[8px] py-[4px] rounded-lg">
+                  {productData.sale}
+                </p>
               </div>
               <h3 className="text-xl text-grayish-blue font-bold uppercase line-through">
                 {productData?.oldPrice}
               </h3>
             </div>
             <div className="flex justify-center items-center gap-[24px]">
-
+              <div className="flex justify-center items-center">
+                <div className="flex justify-center items-center gap-[1px]">
+                  <button className="w-[60px] h-[60px] bg-gray-100 rounded-l-lg text-3xl font-bold text-orange flex justify-center items-center ease-in transition hover:text-opacity-50">
+                    -
+                  </button>
+                  <div className="w-[70px] h-[60px] bg-gray-100 text-xl font-bold flex justify-center items-center">
+                    0
+                  </div>
+                  <button className="w-[60px] h-[60px] bg-gray-100 rounded-r-lg text-3xl font-bold text-orange flex justify-center items-center ease-in transition hover:text-opacity-50">
+                    +
+                  </button>
+                </div>
+              </div>
+              <ToCartBttn>
+                <AiOutlineShoppingCart className="fill-white text-2xl" />
+                <h4 className="text-2xl">Add to cart</h4>
+              </ToCartBttn>
             </div>
           </div>
         </section>
