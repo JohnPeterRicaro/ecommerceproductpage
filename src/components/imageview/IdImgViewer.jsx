@@ -19,7 +19,6 @@ export const IdImageButton = ({ imageData, imageKey, children }) => {
         setIsIdActive(!isIdActive);
         setIsData(imageData);
         setIsKey(imageKey);
-        console.log(isKey);
       }}
       className="w-[500px] cursor-pointer group"
     >
@@ -77,7 +76,7 @@ const IdImageViewer = () => {
                 <div className="relative w-full h-[40px] flex justify-end items-center">
                   <button
                     onClick={() => {
-                        setIsIdActive(!isIdActive);
+                      setIsIdActive(!isIdActive);
                       setKey(0);
                     }}
                     className="relative w-[26px] h-[26px] flex justify-center items-center group"
@@ -100,7 +99,7 @@ const IdImageViewer = () => {
                     />
                   </div>
                   <div className="absolute w-full h-full flex justify-between items-center">
-                    <div className="-translate-x-[50px] w-[100px] h-[600px] flex justify-center items-center group">
+                    <div className="-translate-x-[50px] w-[100px] h-[600px] flex justify-center items-center">
                       <button
                         onClick={handleLeftClick}
                         className="w-[60px] h-[60px] bg-white rounded-full flex justify-center items-center group"
@@ -122,10 +121,10 @@ const IdImageViewer = () => {
                   {isData?.bg.map((data, index) => {
                     return (
                       <div
+                        key={index}
                         className={`relative w-[100px] h-[100px] flex justify-center items-center group`}
                       >
                         <button
-                          key={index}
                           onClick={() => setKey(index)}
                           className={`absolute w-full h-full  rounded-lg border-[3px] ease-in transition ${
                             key === index

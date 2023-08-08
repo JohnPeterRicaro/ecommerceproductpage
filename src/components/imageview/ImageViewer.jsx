@@ -19,7 +19,6 @@ export const ImageButton = ({ imageData, imageKey, children }) => {
         setIsActive(!isActive);
         setIsData(imageData);
         setIsKey(imageKey);
-        console.log(isKey)
       }}
       className="relative w-[340px] cursor-pointer group"
     >
@@ -76,7 +75,10 @@ const ImageViewer = () => {
               <div className=" z-50 w-[600px] h-[600px] flex flex-col justify-center items-center gap-[24px]">
                 <div className="relative w-full h-[40px] flex justify-end items-center">
                   <button
-                    onClick={() => {setIsActive(!isActive); setKey(0)}}
+                    onClick={() => {
+                      setIsActive(!isActive);
+                      setKey(0);
+                    }}
                     className="relative w-[26px] h-[26px] flex justify-center items-center group"
                   >
                     <div className="absolute w-[30px] h-[4px] bg-white rotate-45 rounded-xl transition ease-in duration-300 group-hover:bg-orange group-hover:-rotate-45"></div>
@@ -97,7 +99,7 @@ const ImageViewer = () => {
                     />
                   </div>
                   <div className="absolute w-full h-full flex justify-between items-center">
-                    <div className="-translate-x-[50px] w-[100px] h-[600px] flex justify-center items-center group">
+                    <div className="-translate-x-[50px] w-[100px] h-[600px] flex justify-center items-center">
                       <button
                         onClick={handleLeftClick}
                         className="w-[60px] h-[60px] bg-white rounded-full flex justify-center items-center group"
@@ -119,10 +121,10 @@ const ImageViewer = () => {
                   {isData[isKey]?.bg?.map((data, index) => {
                     return (
                       <div
+                        key={index}
                         className={`relative w-[100px] h-[100px] flex justify-center items-center group`}
                       >
                         <button
-                          key={index}
                           onClick={() => setKey(index)}
                           className={`absolute w-full h-full  rounded-lg border-[3px] ease-in transition ${
                             key === index

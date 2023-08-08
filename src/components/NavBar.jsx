@@ -38,7 +38,7 @@ const NavBar = () => {
             <button>
               <img src="/assets/icon-cart.svg" alt="" />
             </button>
-            <div className="w-[50px] h-[50px]">
+            <div className="w-[50px] h-[50px] rounded-full border-[3px] border-orange border-opacity-0 transition ease hover:border-opacity-100 cursor-pointer">
               <img src="/assets/image-avatar.png" alt="" />
             </div>
           </div>

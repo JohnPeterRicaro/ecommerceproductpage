@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import mShoesData from "@/data/MShoesData";
 import wShoesData from "@/data/WShoesData";
@@ -11,7 +11,6 @@ import ToCartBttn from "@/components/cart/ToCartBttn";
 const ProductShowcase = ({ req, res }) => {
   const [key, setKey] = useState(0);
   const [direction, setDirection] = useState(0);
-  const { isKey } = useStateContext();
 
   const allShoesData = useMemo(() => {
     return [...mShoesData, ...wShoesData];
@@ -66,10 +65,10 @@ const ProductShowcase = ({ req, res }) => {
               {productData?.bg.map((data, index) => {
                 return (
                   <div
+                    key={index}
                     className={`relative w-[100px] h-[100px] flex justify-center items-center group`}
                   >
                     <button
-                      key={index}
                       onClick={() => setKey(index)}
                       className={`absolute w-full h-full  rounded-lg border-[3px] ease-in transition ${
                         key === index
@@ -113,18 +112,28 @@ const ProductShowcase = ({ req, res }) => {
             <div className="flex justify-center items-center gap-[24px]">
               <div className="flex justify-center items-center">
                 <div className="flex justify-center items-center gap-[1px]">
-                  <button className="w-[60px] h-[60px] bg-gray-100 rounded-l-lg text-3xl font-bold text-orange flex justify-center items-center ease-in transition hover:text-opacity-50">
+                  <button
+                    className="w-[60px] h-[60px] bg-gray-100 rounded-l-lg text-3xl font-bold text-orange flex justify-center items-center ease-in transition hover:text-opacity-50"
+                  >
                     -
                   </button>
                   <div className="w-[70px] h-[60px] bg-gray-100 text-xl font-bold flex justify-center items-center">
                     0
                   </div>
-                  <button className="w-[60px] h-[60px] bg-gray-100 rounded-r-lg text-3xl font-bold text-orange flex justify-center items-center ease-in transition hover:text-opacity-50">
+                  <button
+                    className="w-[60px] h-[60px] bg-gray-100 rounded-r-lg text-3xl font-bold text-orange flex justify-center items-center ease-in transition hover:text-opacity-50"
+                  >
                     +
                   </button>
                 </div>
               </div>
-              <ToCartBttn>
+              <ToCartBttn
+                cartID={productData.id}
+                cartTitle={productData.title}
+                cartPrice={productData.price}
+                cartSum={``}
+                cartPic={productData.pics[0]}
+              >
                 <AiOutlineShoppingCart className="fill-white text-2xl" />
                 <h4 className="text-2xl">Add to cart</h4>
               </ToCartBttn>
