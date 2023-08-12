@@ -2,9 +2,14 @@ import { useStateContext } from "@/contextprovider/ContextProvider";
 import { useRouter } from "next/router";
 import navBarData from "@/data/NavBarData";
 import Link from "next/link";
+import { useState } from "react";
 
 const NavBar = () => {
   const router = useRouter();
+
+  const [data, setData] = useState(() => {
+    
+  })
 
   return (
     <>
@@ -35,7 +40,8 @@ const NavBar = () => {
             </div>
           </div>
           <div className="flex justify-center items-center gap-[40px]">
-            <button>
+            <button className="relative">
+              <div className="absolute"></div>
               <img src="/assets/icon-cart.svg" alt="" />
             </button>
             <div className="w-[50px] h-[50px] rounded-full border-[3px] border-orange border-opacity-0 transition ease hover:border-opacity-100 cursor-pointer">

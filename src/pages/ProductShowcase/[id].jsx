@@ -11,6 +11,7 @@ import ToCartBttn from "@/components/cart/ToCartBttn";
 const ProductShowcase = ({ req, res }) => {
   const [key, setKey] = useState(0);
   const [direction, setDirection] = useState(0);
+  const [count, setCount] = useState(0)
 
   const allShoesData = useMemo(() => {
     return [...mShoesData, ...wShoesData];
@@ -113,14 +114,16 @@ const ProductShowcase = ({ req, res }) => {
               <div className="flex justify-center items-center">
                 <div className="flex justify-center items-center gap-[1px]">
                   <button
+                    onClick={() => setCount((count) => count <= 0 ? 0 : count - 1)}
                     className="w-[60px] h-[60px] bg-gray-100 rounded-l-lg text-3xl font-bold text-orange flex justify-center items-center ease-in transition hover:text-opacity-50"
                   >
                     -
                   </button>
                   <div className="w-[70px] h-[60px] bg-gray-100 text-xl font-bold flex justify-center items-center">
-                    0
+                    {count}
                   </div>
                   <button
+                  onClick={() => setCount((count) => count + 1)}
                     className="w-[60px] h-[60px] bg-gray-100 rounded-r-lg text-3xl font-bold text-orange flex justify-center items-center ease-in transition hover:text-opacity-50"
                   >
                     +
@@ -131,7 +134,7 @@ const ProductShowcase = ({ req, res }) => {
                 cartID={productData.id}
                 cartTitle={productData.title}
                 cartPrice={productData.price}
-                cartSum={``}
+                cartSum={count}
                 cartPic={productData.pics[0]}
               >
                 <AiOutlineShoppingCart className="fill-white text-2xl" />
