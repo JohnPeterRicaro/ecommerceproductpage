@@ -5,9 +5,9 @@ const wShoesData = [
     title: "White sneakers for Women",
     parag:
       "Timeless elegance, unbeatable comfort. Elevate your style with our White Sneakers for Women. Perfect for any occasion, a touch of sophistication for your wardrobe.",
-    price: "$289.00",
+    price: "289.00",
     sale: "64%",
-    oldPrice: "$799.00",
+    oldPrice: "799.00",
     pics: [
       "/assets/shopee-women-rubber-1.jpg",
       "/assets/shopee-women-rubber-2.jpg",
@@ -29,9 +29,9 @@ const wShoesData = [
     title: "Blue-Pink White sneakers for Women",
     parag:
       "Step into vibrant style and comfort with our Blue-Pink White Sneakers. Breathable, bold, and bound to impress. Perfect for your active lifestyle.",
-    price: "$289.00",
+    price: "289.00",
     sale: "64%",
-    oldPrice: "$799.00",
+    oldPrice: "799.00",
     pics: [
       "/assets/shopee-women-shoes-1.jpg",
       "/assets/shopee-women-shoes-2.jpg",
@@ -53,7 +53,7 @@ const wShoesData = [
     title: "Explosive Ultralight Casual shoes for Women",
     parag:
       "Fashion-forward comfort: Ready Stock Ladies Ultralight Casual Shoes. Low-top lace-up sneakers for versatile style, all-day comfort. Step up your game!",
-    price: "$885.00",
+    price: "885.00",
     sale: " - ",
     oldPrice: " - ",
     pics: [

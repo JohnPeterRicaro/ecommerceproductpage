@@ -5,44 +5,31 @@ import wShoesData from "@/data/WShoesData";
 const StateContext = createContext();
 
 export const ContextProvider = ({ children }) => {
-  const initialState = {
-    cart: false,
-    notification: 0,
-  };
-
-
   const [sum, setSum] = useState();
-  const [prodTotal, setProdTotal] = useState();
-  const [isActive, setIsActive] = useState(false);
+  const [isCheckOut, setIsCheckOut] = useState(false);
   const [isIdActive, setIsIdActive] = useState(false);
   const [isData, setIsData] = useState();
+  const [dataLength, setDataLength] = useState(0);
   const [isKey, setIsKey] = useState(0);
   const [isRoute, setIsRoute] = useState("/");
-  const [isClicked, setIsClicked] = useState(initialState);
-
-  const handleClick = (clicked) => {
-    setIsClicked({ ...initialState, [clicked]: true, notification: prodTotal });
-  };
 
   return (
     <StateContext.Provider
       value={{
         sum,
         setSum,
-        isActive,
-        setIsActive,
+        isCheckOut,
+        setIsCheckOut,
         isIdActive,
         setIsIdActive,
-        prodTotal,
         isData,
         setIsData,
+        dataLength,
+        setDataLength,
         isKey,
         setIsKey,
-        setProdTotal,
         isRoute,
         setIsRoute,
-        isClicked,
-        setIsClicked,
       }}
     >
       {children}

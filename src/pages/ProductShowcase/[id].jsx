@@ -11,7 +11,7 @@ import ToCartBttn from "@/components/cart/ToCartBttn";
 const ProductShowcase = ({ req, res }) => {
   const [key, setKey] = useState(0);
   const [direction, setDirection] = useState(0);
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   const allShoesData = useMemo(() => {
     return [...mShoesData, ...wShoesData];
@@ -100,21 +100,23 @@ const ProductShowcase = ({ req, res }) => {
             <div className="space-y-[10px]">
               <div className="flex justify-center items-center gap-[20px]">
                 <h3 className=" text-4xl text-gray-800 font-bold uppercase">
-                  {productData?.price}
+                  ${productData?.price}
                 </h3>
                 <p className="text-base text-orange font-bold uppercase bg-pale-orange px-[8px] py-[4px] rounded-lg">
                   {productData.sale}
                 </p>
               </div>
               <h3 className="text-xl text-grayish-blue font-bold uppercase line-through">
-                {productData?.oldPrice}
+                ${productData?.oldPrice}
               </h3>
             </div>
             <div className="flex justify-center items-center gap-[24px]">
               <div className="flex justify-center items-center">
                 <div className="flex justify-center items-center gap-[1px]">
                   <button
-                    onClick={() => setCount((count) => count <= 0 ? 0 : count - 1)}
+                    onClick={() =>
+                      setCount((count) => (count <= 0 ? 0 : count - 1))
+                    }
                     className="w-[60px] h-[60px] bg-gray-100 rounded-l-lg text-3xl font-bold text-orange flex justify-center items-center ease-in transition hover:text-opacity-50"
                   >
                     -
@@ -123,23 +125,33 @@ const ProductShowcase = ({ req, res }) => {
                     {count}
                   </div>
                   <button
-                  onClick={() => setCount((count) => count + 1)}
+                    onClick={() => setCount((count) => count + 1)}
                     className="w-[60px] h-[60px] bg-gray-100 rounded-r-lg text-3xl font-bold text-orange flex justify-center items-center ease-in transition hover:text-opacity-50"
                   >
                     +
                   </button>
                 </div>
               </div>
-              <ToCartBttn
-                cartID={productData.id}
-                cartTitle={productData.title}
-                cartPrice={productData.price}
-                cartSum={count}
-                cartPic={productData.pics[0]}
-              >
-                <AiOutlineShoppingCart className="fill-white text-2xl" />
-                <h4 className="text-2xl">Add to cart</h4>
-              </ToCartBttn>
+              {count <= 0 ? (
+                <>
+                  <div
+                    className="w-[270px] h-[60px] rounded-lg bg-orange text-white flex justify-center items-center gap-[14px] transition ease-in-out hover:opacity-70"
+                  >
+                    0 orders selected
+                  </div>
+                </>
+              ) : (
+                <ToCartBttn
+                  cartID={productData.id}
+                  cartTitle={productData.title}
+                  cartPrice={productData.price}
+                  cartSum={count}
+                  cartPic={productData.pics[0]}
+                >
+                  <AiOutlineShoppingCart className="fill-white text-2xl" />
+                  <h4 className="text-2xl">Add to cart</h4>
+                </ToCartBttn>
+              )}
             </div>
           </div>
         </section>

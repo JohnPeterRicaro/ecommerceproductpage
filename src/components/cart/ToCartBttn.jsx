@@ -1,3 +1,4 @@
+import { useStateContext } from "@/contextprovider/ContextProvider";
 import { useEffect, useState } from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 
@@ -12,8 +13,9 @@ const ToCartBttn = ({
 
   const [data, setData] = useState(() => {
     const getData = JSON.parse(localStorage.getItem("cart"))
-    return getData ? getData : [{id: "id", title: "title", price: "price", pics: "pics", sum: 0},]
+    return getData ? getData : []
   })
+  const {setDataLength} = useStateContext()
 
   const oldSum = data.sum === "undefined" ? 0 : data.sum ? data.sum : data.sum === null ? 0 : 0
 
@@ -30,6 +32,7 @@ const ToCartBttn = ({
   const handleAddToCart = (product) => {
     console.log(product)
     setData([...data, product])
+    setDataLength(data.length)
     localStorage.setItem("cart", JSON.stringify(data))
   }
 
