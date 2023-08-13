@@ -4,21 +4,19 @@ import { FaTrashAlt } from "react-icons/fa";
 
 const CartPopUp = ({ isCart, data, dataLength }) => {
   const { isCheckOut, setIsCheckOut, setDataLength } = useStateContext();
+  const [isData, setData] = useState(data);
 
-  const [isData, setData] = useState(() => {
-    if (typeof window !== "undefined") {
-      const getData = JSON.parse(localStorage.getItem("cart"));
-      return getData ? getData : [];
-    }
-  });
+  useEffect(() => {
+    setData(data);
+  }, [data]);
 
-  const handleRemove = ({index}) => {
-    const updatedData = [...isData]
-    updatedData.splice(index, 1)
-    setData(updatedData)
-    setDataLength(updatedData.length)
-    localStorage.setItem("cart", JSON.stringify(updatedData))
-  }
+  const handleRemove = (index) => {
+    const updatedData = [...isData];
+    updatedData.splice(index, 1);
+    setData(updatedData);
+    setDataLength(updatedData.length);
+    localStorage.setItem("cart", JSON.stringify(updatedData));
+  };
 
   return (
     <>
@@ -30,8 +28,8 @@ const CartPopUp = ({ isCart, data, dataLength }) => {
           {dataLength > 0 ? (
             <>
               <div>
-                <div className="w-full h-[200px] overflow-y-scroll p-[24px]">
-                  {data.map((data, index) => {
+                <div className="w-full h-[200px] overflow-y-scroll p-[24px] space-y-[10px]">
+                  {isData.map((data, index) => {
                     return (
                       <div
                         key={index}

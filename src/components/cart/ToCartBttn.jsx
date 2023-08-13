@@ -10,31 +10,30 @@ const ToCartBttn = ({
   cartPic,
   children,
 }) => {
-
   const [data, setData] = useState(() => {
-    const getData = JSON.parse(localStorage.getItem("cart"))
-    return getData ? getData : []
-  })
-  const {setDataLength} = useStateContext()
+    const getData = JSON.parse(localStorage.getItem("cart"));
+    return getData ? getData : [];
+  });
+  const { setDataLength } = useStateContext();
 
-  const oldSum = data.sum === "undefined" ? 0 : data.sum ? data.sum : data.sum === null ? 0 : 0
-
-  const newSum = cartSum + oldSum
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(data));
+    setDataLength(data.length);
+  }, [data, setDataLength]);
 
   const CART_DATA = {
     id: cartID,
     title: cartTitle,
     price: cartPrice,
     pics: cartPic,
-    sum: newSum,
+    sum: cartSum,
   };
-  
+
   const handleAddToCart = (product) => {
-    console.log(product)
-    setData([...data, product])
-    setDataLength(data.length)
-    localStorage.setItem("cart", JSON.stringify(data))
-  }
+    console.log(product);
+    setData((prevData) => [...prevData, product]);
+    window.location.reload(false)
+  };
 
   return (
     <button
