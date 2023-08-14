@@ -164,7 +164,7 @@ const ProductShowcase = ({ req, res }) => {
               </div>
               {count <= 0 ? (
                 <>
-                  <div className="w-full md:w-[270px] h-[60px] rounded-lg bg-orange text-white flex justify-center items-center gap-[14px] transition ease-in-out hover:opacity-70">
+                  <div className="w-full md:w-[270px] h-[60px] rounded-lg bg-orange text-white flex justify-center items-center gap-[14px] transition ease-in-out hover:opacity-70 boxOrangeShadow">
                     0 orders selected
                   </div>
                 </>
