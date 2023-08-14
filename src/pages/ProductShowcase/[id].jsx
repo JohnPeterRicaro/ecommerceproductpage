@@ -1,9 +1,8 @@
 import { useRouter } from "next/router";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import mShoesData from "@/data/MShoesData";
 import wShoesData from "@/data/WShoesData";
-import { useStateContext } from "@/contextprovider/ContextProvider";
 import { IdImageButton } from "@/components/imageview/IdImgViewer";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import ToCartBttn from "@/components/cart/ToCartBttn";
