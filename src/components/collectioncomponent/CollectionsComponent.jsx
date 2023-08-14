@@ -32,7 +32,7 @@ const CollectionsComponent = ({ data }) => {
                     whileTap={{ scale: 0.9 }}
                     className="bg-orange px-3 py-1 rounded-lg text-white font-bold transition ease hover:bg-pale-orange hover:text-orange"
                     onClick={() => {
-                      const productShowcaseUrl = `/productshowcase/${card.id}`;
+                      const productShowcaseUrl = `/ProductShowcase/${card.id}`;
                       router.push(productShowcaseUrl);
                     }}
                   >
