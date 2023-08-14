@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 
 const CollectionsComponent = ({ data }) => {
   const router = useRouter();
-  
+
   return (
     <div className="mx-auto my-[40px] md:my-[80px] w-[390px] md:w-[1440px] h-auto">
       <div className="w-full py-[0px] md:py-[80px] flex flex-wrap justify-center items-center gap-[54px]">
@@ -31,7 +31,10 @@ const CollectionsComponent = ({ data }) => {
                     whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
                     whileTap={{ scale: 0.9 }}
                     className="bg-orange px-3 py-1 rounded-lg text-white font-bold transition ease hover:bg-pale-orange hover:text-orange"
-                    onClick={() => router.push({pathname: `/productshowcase/[id]`, as: `/ProductShowcase/${card.id}`, query: {id: card.id}})}
+                    onClick={() => {
+                      const productShowcaseUrl = `/productshowcase/${card.id}`;
+                      router.push(productShowcaseUrl);
+                    }}
                   >
                     View Full Details
                   </motion.button>
