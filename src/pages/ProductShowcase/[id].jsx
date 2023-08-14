@@ -22,8 +22,6 @@ const ProductShowcase = ({ req, res }) => {
 
   const productData = allShoesData.find((data) => data.id === shoeId);
 
-  console.log(productData)
-
   const variants = {
     initial: (direction) => {
       return {
