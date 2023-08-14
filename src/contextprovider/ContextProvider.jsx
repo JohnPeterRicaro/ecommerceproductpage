@@ -5,7 +5,9 @@ import wShoesData from "@/data/WShoesData";
 const StateContext = createContext();
 
 export const ContextProvider = ({ children }) => {
+  const [isActive, setIsActive] = useState(false);
   const [sum, setSum] = useState();
+  const [mobileMenu, setMobileMenu] = useState(false);
   const [isCheckOut, setIsCheckOut] = useState(false);
   const [isIdActive, setIsIdActive] = useState(false);
   const [isData, setIsData] = useState();
@@ -16,8 +18,12 @@ export const ContextProvider = ({ children }) => {
   return (
     <StateContext.Provider
       value={{
+        isActive,
+        setIsActive,
         sum,
         setSum,
+        mobileMenu,
+        setMobileMenu,
         isCheckOut,
         setIsCheckOut,
         isIdActive,
@@ -38,3 +44,5 @@ export const ContextProvider = ({ children }) => {
 };
 
 export const useStateContext = () => useContext(StateContext);
+
+export default useStateContext;

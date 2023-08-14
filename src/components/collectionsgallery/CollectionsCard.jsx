@@ -14,8 +14,8 @@ const CollectionsCard = ({data, children}) => {
     return (
     <>
         <div className="my-[80px] relative flex justify-center items-center">
-            <div className="mx-auto w-[1440px] h-[250px]">
-                <div className="relative w-full h-full flex justify-center items-center">
+            <div className="mx-auto w-[390px] md:w-[1440px] h-[250px]">
+                <div className="relative w-full h-full flex flex-col md:flex-row justify-center items-center">
                     <div className="z-10 absolute w-full h-full bg-black backdrop-blur-sm bg-opacity-10"></div>
                     <div className={`absolute w-full h-full ${data[isIndex].bg[0]} bg-center bg-cover bg-no-repeat`}></div>
                     {children}

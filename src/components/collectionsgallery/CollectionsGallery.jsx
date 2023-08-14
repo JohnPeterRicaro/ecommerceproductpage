@@ -46,7 +46,7 @@ const CollectionsGallery = ({ shoesData }) => {
 
   return (
     <div className="w-full h-auto bg-black bg-opacity-70 backdrop-blur">
-      <div className="mx-auto w-[1440px] h-auto flex justify-center items-start text-xl">
+      <div className="mx-auto w-[390px] md:w-[1440px] h-auto flex justify-center items-start text-xl">
         <div className="relative w-full aspect-video overflow-hidden">
           <AnimatePresence initial={false}>
             <motion.img
@@ -64,18 +64,18 @@ const CollectionsGallery = ({ shoesData }) => {
           {/* Left Button */}
           <button
             onClick={handleLeftClick}
-            className=" absolute h-full w-[80px] top-0 left-0 bg-black bg-opacity-30 backdrop-blur group"
+            className=" absolute h-full w-[40px] md:w-[80px] top-0 left-0 bg-black bg-opacity-30 backdrop-blur group"
           >
-            <AiOutlineLeft className=" text-5xl translate-x-2 transition ease-in group-hover:fill-white" />
+            <AiOutlineLeft className=" text-2xl md:text-5xl translate-x-2 transition ease-in group-hover:fill-white" />
           </button>
           {/* Right Button */}
           <button
             onClick={handleRightClick}
-            className=" absolute h-full w-[80px] top-0 right-0 bg-black bg-opacity-30 backdrop-blur group"
+            className=" absolute h-full w-[40px] md:w-[80px] top-0 right-0 bg-black bg-opacity-30 backdrop-blur group"
           >
-            <AiOutlineRight className=" text-5xl translate-x-6 transition ease-in group-hover:fill-white" />
+            <AiOutlineRight className=" text-2xl md:text-5xl translate-x-2 md:translate-x-6 transition ease-in group-hover:fill-white" />
           </button>
-          <div className="absolute top-[470px] left-[100px] bg-black backdrop-blur-xl bg-opacity-30 p-[23px] rounded-xl flex flex-col justify-center items-center gap-[30px]">
+          <div className="hidden md:absolute top-[470px] left-[100px] bg-black backdrop-blur-xl bg-opacity-30 p-[23px] rounded-xl md:flex flex-col justify-center items-center gap-[30px]">
             <div className="flex flex-col justify-center items-center gap-[24px] text-center">
               <motion.h1
                 key={shoesData[isIndex]?.title}

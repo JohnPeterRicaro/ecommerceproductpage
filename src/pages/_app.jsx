@@ -3,6 +3,7 @@ import NavBar from "@/components/NavBar";
 import CheckOut from "@/components/checkout/CheckOut";
 import IdImageViewer from "@/components/imageview/IdImgViewer";
 import ImageViewer from "@/components/imageview/ImageViewer";
+import MobileMenu from "@/components/mobilemenu/MobileMenu";
 import { ContextProvider } from "@/contextprovider/ContextProvider";
 import "@/styles/globals.css";
 import { Kumbh_Sans } from "next/font/google";
@@ -31,6 +32,7 @@ export default function App({ Component, pageProps }) {
           <div
             className={`relative ${kumbSans.variable} font-kumbSans text-[16px]`}
           >
+            <MobileMenu/>
             <CheckOut/>
             <IdImageViewer/>
             <ImageViewer />

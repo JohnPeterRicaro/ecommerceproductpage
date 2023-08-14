@@ -17,7 +17,7 @@ export default function Home() {
       <CollectionsGallery shoesData={allShoesData} />
       <section className="mt-[80px] w-full h-auto">
         <CollectionsCard data={wShoesData}>
-          <div className="z-20 p-[24px] w-full h-full flex flex-col justify-center items-end gap-[20px]">
+          <div className="z-20 p-[24px] w-full h-full flex flex-col justify-center items-start md:items-end gap-[20px]">
             <h1 className="text-3xl font-bold text-white uppercase">
               Women's shoes collection
             </h1>
@@ -30,10 +30,10 @@ export default function Home() {
           </div>
         </CollectionsCard>
         <section className="mt-[40px] w-full h-auto">
-          <div className="mx-auto w-[1440px] p-[24px] flex justify-center items-center gap-[40px]">
-            <div className="flex justify-start items-center gap-[20px]">
-              <div className=" bg-orange h-[80px] w-[80px] rounded-full flex justify-center items-center">
-                <AiOutlinePercentage className="text-4xl text-white" />
+          <div className="mx-auto w-[390px] md:w-[1440px] p-[24px] flex flex-col md:flex-row justify-center items-center gap-[40px]">
+            <div className="w-full md:w-auto flex justify-start items-center gap-[20px]">
+              <div className=" bg-orange h-[60px] w-[60px] md:h-[80px] md:w-[80px] rounded-full flex justify-center items-center">
+                <AiOutlinePercentage className="text-2xl md:text-4xl text-white" />
               </div>
               <div className="flex flex-col justify-center items-start">
                 <h1 className="text-orange text-2xl font-bold uppercase">
@@ -42,10 +42,10 @@ export default function Home() {
                 <p className="text-gray-500 text-xl">Season end sale!</p>
               </div>
             </div>
-            <div className="w-[4px] h-[80px] bg-pale-orange rounded-lg"></div>
-            <div className="flex justify-start items-center gap-[20px]">
-              <div className=" bg-orange h-[80px] w-[80px] rounded-full flex justify-center items-center">
-                <FaGift className="text-4xl text-white" />
+            <div className="w-[80px] h-[4px] md:w-[4px] md:h-[80px] bg-pale-orange rounded-lg"></div>
+            <div className="w-full md:w-auto flex justify-start items-center gap-[20px]">
+              <div className=" bg-orange h-[60px] w-[60px] md:h-[80px] md:w-[80px] rounded-full flex justify-center items-center">
+                <FaGift className="text-2xl md:text-4xl text-white" />
               </div>
               <div className="flex flex-col justify-center items-start">
                 <h1 className="text-orange text-2xl font-bold uppercase">
@@ -56,10 +56,10 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="w-[4px] h-[80px] bg-pale-orange rounded-lg"></div>
-            <div className="flex justify-start items-center gap-[20px]">
-              <div className=" bg-orange h-[80px] w-[80px] rounded-full flex justify-center items-center">
-                <h1 className="text-white font-bold text-xl">NEW!</h1>
+            <div className="w-[80px] h-[4px] md:w-[4px] bg-pale-orange rounded-lg"></div>
+            <div className="w-full md:w-auto flex justify-start items-center gap-[20px]">
+              <div className=" bg-orange h-[60px] w-[60px] md:h-[80px] md:w-[80px] rounded-full flex justify-center items-center">
+                <h1 className="text-white font-bold text-base md:text-xl">NEW!</h1>
               </div>
               <div className="flex flex-col justify-center items-start">
                 <h1 className="text-orange text-2xl font-bold uppercase">

@@ -7,13 +7,13 @@ const CollectionsComponent = ({ data }) => {
   const router = useRouter();
   
   return (
-    <div className="mx-auto my-[80px] w-[1440px] h-auto">
-      <div className="w-full py-[80px] flex flex-wrap justify-center items-center gap-[54px]">
+    <div className="mx-auto my-[40px] md:my-[80px] w-[390px] md:w-[1440px] h-auto">
+      <div className="w-full py-[0px] md:py-[80px] flex flex-wrap justify-center items-center gap-[54px]">
         {data.map((card) => {
           return (
             <div
               key={card.key}
-              className="w-auto rounded-3xl overflow-hidden bg-gray-50 shadow-md flex justify-center items-center gap-5"
+              className="w-auto rounded-3xl overflow-hidden bg-gray-50 shadow-md flex flex-col md:flex-row justify-center items-center gap-1 md:gap-5"
             >
               <ImageButton imageData={data} imageKey={card.key}>
                 <>
@@ -23,7 +23,7 @@ const CollectionsComponent = ({ data }) => {
                   <img src={card.pics[0]} className="" alt="" />
                 </>
               </ImageButton>
-              <div className="w-[300px] px-[24px] flex flex-col justify-center items-start gap-[20px]">
+              <div className="w-[300px] h-[340px] md:h-auto px-[24px] flex flex-col justify-center items-start gap-[20px]">
                 <h1 className="text-2xl font-bold">{card.title}</h1>
                 <p className="text-sm">{card.parag}</p>
                 <AnimatePresence>

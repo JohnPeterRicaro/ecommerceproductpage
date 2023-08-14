@@ -21,7 +21,7 @@ const CartPopUp = ({ isCart, data, dataLength }) => {
   return (
     <>
       {isCart && (
-        <div className="absolute z-40 w-[360px] h-auto shadow-lg rounded-lg bg-white translate-y-[200px] -translate-x-[40px]">
+        <div className="absolute z-20 w-[370px] h-auto shadow-lg rounded-lg bg-white translate-y-[220px] -translate-x-[145px] md:w-[360px] md:translate-y-[200px] md:-translate-x-[40px]">
           <div className="w-full py-[24px] px-[24px] border-b-[1px] border-gray-200 text-xl font-bold text-gray-800 text-left">
             Cart
           </div>
@@ -71,7 +71,7 @@ const CartPopUp = ({ isCart, data, dataLength }) => {
           ) : (
             <>
               <>
-                <div className="w-full h-[200px] text-xl font-bold text-gray-500 flex justify-center items-center">
+                <div className="w-full h-[265px] text-xl font-bold text-gray-500 flex justify-center items-center">
                   Your cart is empty.
                 </div>
               </>

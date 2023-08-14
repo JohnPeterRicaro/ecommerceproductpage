@@ -1,8 +1,8 @@
 const About = () => {
   return (
-    <section className="mx-auto mt-[80px] w-[1440px] h-auto flex justify-center items-start gap-[80px]">
+    <section className="mx-auto mt-[80px] w-[380px] md:w-[1440px] h-auto flex flex-col md:flex-row justify-center items-start gap-[40px] md:gap-[80px]">
       <h1 className="text-4xl font-bold text-gray-800">About</h1>
-      <p className="w-1/2 mt-[80px]">
+      <p className="w-[370px] md:w-1/2 md:mt-[80px]">
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam, esse
         recusandae voluptatem ratione distinctio dignissimos maxime earum iste.
         Perferendis, pariatur. Officiis mollitia quae aut pariatur autem, ullam

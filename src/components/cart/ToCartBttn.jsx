@@ -30,7 +30,6 @@ const ToCartBttn = ({
   };
 
   const handleAddToCart = (product) => {
-    console.log(product);
     setData((prevData) => [...prevData, product]);
     window.location.reload(false)
   };
@@ -38,7 +37,7 @@ const ToCartBttn = ({
   return (
     <button
       onClick={() => handleAddToCart(CART_DATA)}
-      className="w-[270px] h-[60px] rounded-lg bg-orange text-white flex justify-center items-center gap-[14px] transition ease-in-out hover:opacity-70"
+      className="w-full md:w-[270px] h-[60px] rounded-lg bg-orange text-white flex justify-center items-center gap-[14px] transition ease-in-out hover:opacity-70"
     >
       {children}
     </button>

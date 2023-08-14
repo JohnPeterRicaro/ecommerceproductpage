@@ -7,6 +7,7 @@ import { useStateContext } from "@/contextprovider/ContextProvider";
 import { IdImageButton } from "@/components/imageview/IdImgViewer";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import ToCartBttn from "@/components/cart/ToCartBttn";
+import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 
 const ProductShowcase = ({ req, res }) => {
   const [key, setKey] = useState(0);
@@ -41,14 +42,26 @@ const ProductShowcase = ({ req, res }) => {
     },
   };
 
+  const handleLeftClick = () => {
+    setKey((index) => {
+      return index <= 0 ? productData?.bg.length - 1 : index - 1;
+    });
+  };
+
+  const handleRightClick = () => {
+    setKey((index) => {
+      return index >= productData.bg.length - 1 ? 0 : index + 1;
+    });
+  };
+
   return (
     <>
       {productData ? (
-        <section className="mx-auto mt-[80px] mb-[140px] w-[1440px] h-[650px] flex justify-evenly items-start">
-          <div className="w-1/2 flex flex-col justify-center items-center gap-[40px]">
+        <section className="mx-auto md:mt-[80px] md:mb-[140px] w-[390px] md:w-[1440px] h-auto md:h-[650px] flex flex-col md:flex-row justify-center md:justify-evenly items-start">
+          <div className="w-[390px] md:w-1/2 flex flex-col justify-center items-center gap-[40px]">
             <IdImageButton imageData={productData} imageKey={productData.key}>
               <>
-                <div className="w-[500px] rounded-2xl overflow-hidden flex justify-center items-center">
+                <div className="relative w-[100%] h-[300px] md:h-auto md:w-[500px] md:rounded-2xl overflow-hidden flex justify-center items-center">
                   <motion.img
                     key={productData.key}
                     variants={variants}
@@ -62,7 +75,25 @@ const ProductShowcase = ({ req, res }) => {
                 </div>
               </>
             </IdImageButton>
-            <div className="flex justify-center items-center gap-[30px]">
+            <div className="absolute w-[400px] h-[21%] flex md:hidden justify-between items-center">
+              <div className="translate-x-[30px] md:-translate-x-[50px] w-[40px] h-[20%] md:w-[100px] md:h-[600px] flex justify-center items-center">
+                <button
+                  onClick={handleLeftClick}
+                  className="w-[40px] h-[40px] md:w-[60px] md:h-[60px] bg-white rounded-full flex justify-center items-center group"
+                >
+                  <FaChevronLeft className=" text-base md:text-2xl transition ease-in group-hover:fill-orange" />
+                </button>
+              </div>
+              <div className="-translate-x-[30px] md:translate-x-[50px] w-[40px] h-[20%] md:w-[100px] md:h-[600px] flex justify-center items-center">
+                <button
+                  onClick={handleRightClick}
+                  className="w-[40px] h-[40px] md:w-[60px] md:h-[60px] bg-white rounded-full flex justify-center items-center group"
+                >
+                  <FaChevronRight className=" text-base md:text-2xl transition ease-in group-hover:fill-orange" />
+                </button>
+              </div>
+            </div>
+            <div className="hidden md:flex justify-center items-center gap-[30px]">
               {productData?.bg.map((data, index) => {
                 return (
                   <div
@@ -85,19 +116,19 @@ const ProductShowcase = ({ req, res }) => {
               })}
             </div>
           </div>
-          <div className="w-1/2 h-full text-left flex flex-col justify-center items-start gap-[30px]">
+          <div className="mt-[40px] w-[390px] md:mt-0 md:w-1/2 h-full text-left flex flex-col justify-center items-start gap-[30px]">
             <div className="space-y-[20px]">
-              <h3 className="w-full text-xl font-bold text-orange uppercase">
+              <h3 className="w-full text-lg md:text-xl font-bold text-orange uppercase">
                 sneaker company
               </h3>
-              <h1 className="text-5xl text-gray-800 font-bold uppercase">
+              <h1 className="text-3xl md:text-5xl text-gray-800 font-bold uppercase">
                 {productData?.title}
               </h1>
             </div>
-            <p className="text-left w-[500px] text-lg text-dark-grayish-blue">
+            <p className="text-left w-[390px] md:w-[500px] text-lg text-dark-grayish-blue">
               {productData?.parag}
             </p>
-            <div className="space-y-[10px]">
+            <div className="space-y-[10px] w-full flex justify-between items-center md:block md:w-auto">
               <div className="flex justify-center items-center gap-[20px]">
                 <h3 className=" text-4xl text-gray-800 font-bold uppercase">
                   ${productData?.price}
@@ -110,23 +141,23 @@ const ProductShowcase = ({ req, res }) => {
                 ${productData?.oldPrice}
               </h3>
             </div>
-            <div className="flex justify-center items-center gap-[24px]">
-              <div className="flex justify-center items-center">
-                <div className="flex justify-center items-center gap-[1px]">
+            <div className="w-[390px] md:w-auto flex flex-col md:flex-row justify-center items-center gap-[24px]">
+              <div className="w-full md:w-auto flex justify-center items-center">
+                <div className="w-full md:w-auto flex justify-center items-center gap-[1px]">
                   <button
                     onClick={() =>
                       setCount((count) => (count <= 0 ? 0 : count - 1))
                     }
-                    className="w-[60px] h-[60px] bg-gray-100 rounded-l-lg text-3xl font-bold text-orange flex justify-center items-center ease-in transition hover:text-opacity-50"
+                    className="w-[24%] md:w-[60px] h-[60px] bg-gray-100 rounded-l-lg text-3xl font-bold text-orange flex justify-center items-center ease-in transition hover:text-opacity-50"
                   >
                     -
                   </button>
-                  <div className="w-[70px] h-[60px] bg-gray-100 text-xl font-bold flex justify-center items-center">
+                  <div className="w-[48%] md:w-[70px] h-[60px] bg-gray-100 text-xl font-bold flex justify-center items-center">
                     {count}
                   </div>
                   <button
                     onClick={() => setCount((count) => count + 1)}
-                    className="w-[60px] h-[60px] bg-gray-100 rounded-r-lg text-3xl font-bold text-orange flex justify-center items-center ease-in transition hover:text-opacity-50"
+                    className="w-[24%] md:w-[60px] h-[60px] bg-gray-100 rounded-r-lg text-3xl font-bold text-orange flex justify-center items-center ease-in transition hover:text-opacity-50"
                   >
                     +
                   </button>
@@ -134,9 +165,7 @@ const ProductShowcase = ({ req, res }) => {
               </div>
               {count <= 0 ? (
                 <>
-                  <div
-                    className="w-[270px] h-[60px] rounded-lg bg-orange text-white flex justify-center items-center gap-[14px] transition ease-in-out hover:opacity-70"
-                  >
+                  <div className="w-full md:w-[270px] h-[60px] rounded-lg bg-orange text-white flex justify-center items-center gap-[14px] transition ease-in-out hover:opacity-70">
                     0 orders selected
                   </div>
                 </>
